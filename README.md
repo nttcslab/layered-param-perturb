@@ -77,7 +77,7 @@ One can reproduce the experimental results and plots by the following procedure.
 
 ## Files in plot
 - [table3.py](./plot/table3.py): Table 3
-- [loss.py](./plot/loss.py): Figure 6 (loss.png), run in a separate python environment for `statannotations`
+- [loss.py](./plot/loss.py): Figure 6 (loss.png)
 - [conv.py](./plot/conv.py): Figure 7 (conv.png)
 
 ## Trouble shooting
@@ -105,3 +105,7 @@ If a shell script is modified and therefore the mapping from `cuda_id` to the ex
   year = {2025}
 }
 ```
+
+## License
+
+[SoftwareLicenseAgreement.pdf](./SoftwareLicenseAgreement.pdf)
