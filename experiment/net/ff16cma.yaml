@@ -1,0 +1,5 @@
+num_features: 16
+num_layers: 16
+num_solutions: 17
+lr_bp: 0.0008
+cma_sigma: 0.009

@@ -1,0 +1,5 @@
+num_features: 32
+num_layers: 32
+num_zoo_vectors: 32
+lr_bp: 0.0004
+lr_zo: 0.001

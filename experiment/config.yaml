@@ -1,0 +1,45 @@
+defaults:
+  - net: ff16f
+  - _self_  
+  - override hydra/hydra_logging: disabled  
+  - override hydra/job_logging: disabled
+
+hydra:
+  run:
+    dir: ./
+  output_subdir: null
+
+seed: 0
+device: cuda  # cpu
+num_threads: 4
+cuda_id: 0
+logdir: '../log'
+suffix: '_'
+
+dataset: MNIST  # [MNIST, FMNIST] 
+optimizer: Adam
+epochs_bp: 10
+epochs_zo: 100
+epochs_cma: 100
+batch_size: 100
+
+cma:
+  verbose: -9
+  diagonal: false
+
+zoo:
+  lambdaS: 1  # Scale, lambdaS / num_parameters 
+  mu: 1e-3  # Smoothing, mu / sqrt(num_parameters)
+  vectors: fromI  # [fromI, lpp, coordinate]
+  lpp:  # Layered Parameter Perturbation
+    rho: 0.1  # Regularizing the covariance matrix
+    Rout: 100  # Number of output perturbations
+    Rin: 100  # Number of random input vectors
+    Tud: 100  # Update interval of covariances
+    alpha: 0.01  # Exponential smoothing of parameter covariance matrix
+
+defmul: 1
+deficient:
+  split: 1e-2
+  eps_radius: 1e-3
+  eps_angle: 1e-1
